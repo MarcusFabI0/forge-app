@@ -6,15 +6,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ variant = 'primary', className = '', ...props }: ButtonProps) {
-  // 1. Estilos que TODO botão terá (Base)
-  const baseStyles = "px-6 py-3 rounded-md font-bold transition-all active:scale-95 cursor-pointer uppercase tracking-widest text-sm"
-  
-  // 2. Dicionário de estilos por variante (usando suas cores do @theme)
-  const variants = {
-    primary: "bg-brand-primary text-white hover:bg-orange-600 shadow-lg shadow-orange-900/20",
-    secondary: "bg-brand-secondary text-white hover:bg-emerald-600",
-    outline: "border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white"
-  }
+// 1. Estilos que TODO botão terá (Base)
+const baseStyles = "px-6 py-3 rounded-xl font-bold transition-all active:scale-[0.98] hover:brightness-110 cursor-pointer uppercase tracking-widest text-sm"
+
+// 2. Dicionário de estilos por variante
+const variants = {
+  primary: "bg-brand-primary text-black shadow-lg shadow-orange-900/20", 
+  secondary: "bg-brand-secondary text-white",
+  outline: "border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-black"
+}
 
   return (
     <button 
