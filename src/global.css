@@ -2,8 +2,10 @@
 
 @theme {
   --color-brand-primary: #f97316; /* Laranja Forja */
-  --color-brand-secondary: #10b981; /* Verde Suplemento (opcional) */
+  --color-brand-secondary: #10b981; /* Verde Suplemento */
   
   --color-background: #09090b; /* Zinc 950 */
   --color-surface: #18181b;    /* Zinc 900 para cards */
+
+  --color-label: #a1a1aa; /* Zinc 400 para labels */
 }
