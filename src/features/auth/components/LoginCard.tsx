@@ -2,6 +2,7 @@ import { Button } from "@/shared/components/Button";
 import { Input } from "@/shared/components/Input";
 import { Mail, Lock } from "lucide-react";
 import { useState, type SubmitEvent } from "react";
+import { Link } from "react-router-dom";
 
 export function LoginCard() {
 
@@ -53,7 +54,7 @@ export function LoginCard() {
         </p>
       </div>
       <form onSubmit={handleSubmit} className="w-full">
-
+        {/* // div pai dos inputs */}
         <div className="flex flex-col gap-4 w-full">
           <Input
             label="E-mail"
@@ -64,6 +65,7 @@ export function LoginCard() {
             onChange={(e) => setEmail(e.target.value)}
             onBlur={validateEmail}
             error={emailError}
+            onFocus={() => setEmailError("")}
           />
           <div className="flex flex-col gap-0">
             <Input
@@ -74,6 +76,7 @@ export function LoginCard() {
               onChange={(e) => setPassword(e.target.value)}
               onBlur={validatePassword}
               error={passwordError}
+              onFocus={() => setPasswordError("")}
               isPassword
             />
             <button className="text-xs text-brand-primary hover:underline self-end cursor-pointer mr-2 -mt-2">
@@ -88,9 +91,9 @@ export function LoginCard() {
       <div className="mt-8 pt-6 border-t border-white/5 text-center">
         <p className="text-zinc-500 text-sm">
           Ainda não faz parte da elite?{' '}
-          <button className="text-brand-primary font-bold hover:underline cursor-pointer ml-1 transition-all active:scale-95">
+          <Link to={"/register"} className="text-brand-primary font-bold hover:underline cursor-pointer ml-1 transition-all active:scale-95">
             Crie sua conta
-          </button>
+          </Link>
         </p>
       </div>
     </div>

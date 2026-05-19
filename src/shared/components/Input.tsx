@@ -37,12 +37,13 @@ export function Input({ label, icon: Icon, error, isPassword, ...props }: InputP
         )}
       </div>
 
-      <div className="min-h-4 mt-0.5 ml-1">
-        {error ? (
-          <span className="text-xs text-red-500 font-medium block animate-fade-in">
+      {/* Container do erro com transição de opacidade e margem dinâmica */}
+      <div className={`mt-1 ml-1 transition-all duration-200 ${error ? "opacity-100 mb-2" : "opacity-0 mb-0 h-0"}`}>
+        {error && (
+          <p className="text-red-500 text-xs font-medium animate-fadeIn [text-shadow:0_0_10px_rgba(239,68,68,0.2)]">
             {error}
-          </span>
-        ) : null}
+          </p>
+        )}
       </div>
     </div>
   );
